@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&family=Protest+Strike&display=swap');
+
+
 body{
   background-color: rgb(72, 72, 72);
+  margin-top: 30px;
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .container_app{
   display: flex;
@@ -8,13 +15,34 @@ body{
 
 .box{
   background-color: aliceblue;
-  padding: 20px;
+  padding: 30px 80px;
   border-radius: 12px;
   margin-bottom: 20px;
 }
 
+.box > p {
+  padding-top: 20px;
+}
+
 .box > input{
   width: 100%;
+  border-radius:10px;
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    font-family:inherit;
+  font-size: inherit;
+  
+ 
+}
+
+.box_title{
+  display: flex;
+  align-items: center;
+}
+
+.box_title > h2{
+  padding-left: 15px;
 }
 
 .container{
@@ -22,8 +50,44 @@ body{
   height: 100%;
 }
 
+.personal_photo  p{
+  color: aliceblue;
+  
+}
+.avatar_fullname > p{
+  font-size: 25px;
+}
+
+.container > .personal_photo{
+  background-color: rgb(60, 60, 232);
+  width: 100%;
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.personal_photo > .contacts {
+  display: flex;
+
+    align-items: center;
+}
+
+.personal_photo > .avatar_fullname{
+  display: flex;
+    align-items: center;
+}
+
 
 .main_info{
-  height: 100vh;
-  width: 100vh;
+  height: 40vw;
+  width: 50vw;
+}
+
+
+.main_info > .title_main{
+  background-color: rgba(203, 238, 255, 0.701);
+  text-align: center;
+  padding : 10px 0;
 }
