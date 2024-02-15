@@ -11,11 +11,16 @@ function App() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
+  
+  const [titleOfStudy, setTitleOfStudy] = useState('');
+  
 
+  function handleChangeTitleOfStudy(e){
+      setTitleOfStudy(e.target.value)
+  }
 
   function handleChangeName(e){
     setName(e.target.value)
-    console.log(name)
   }
   
   function handleChangePhone(e){
@@ -25,15 +30,17 @@ function App() {
     setEmail(e.target.value)
   }
 
+ 
+
 
   return (
     <div className='container_app'>
     <div className='personal_info'>
     <Personal name={name} handleChangeName={handleChangeName} phone={phone} handleChangePhone={handleChangePhone} email={email} handleChangeEmail={handleChangeEmail}/>
-    <Education />
+    <Education  titleOfStudy={titleOfStudy} handleChangeTitleOfStudy={handleChangeTitleOfStudy} />
     <Experience />
     </div>
-    <Container name={name} phone={phone} email={email}/>
+    <Container name={name} phone={phone} email={email} titleOfStudy={titleOfStudy} />
     </div>
   )
 }
