@@ -4,8 +4,9 @@ import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
 
 
-function Container({name, phone, email}){
+function Container({name, phone, email, titleOfStudy, submit}){
     const style = { color: "white", margin: '10px' }
+    console.log(submit)
     return(
         <>
         <div className="container" id="container">
@@ -29,6 +30,7 @@ function Container({name, phone, email}){
            </div>
            <div className="main_info">
                 <h2 className="title_main">Education</h2>
+                <div className="title_study">{submit ? {titleOfStudy} : null}</div>
                 <h2 className="title_main">Work History</h2>
            </div>
         </div>
