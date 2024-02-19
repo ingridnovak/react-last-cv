@@ -4,20 +4,38 @@ import Education from './components/Education'
 import Experience from './components/Experience'
 
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
+ 
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
+ 
   
-  const [titleOfStudy, setTitleOfStudy] = useState('');
+  const [education, setEducation] = useState([]);
+
+
+  useEffect(() => {
+   
+    console.log('State updated:', education);
+
+   
+  }, [education]); 
+
   
 
-  function handleChangeTitleOfStudy(e){
-      setTitleOfStudy(e.target.value)
+  function addEducation(item){
+    
+      if(!education.includes(item)){
+        setEducation([...education, item]);
+
+      }
+      console.log(education)
   }
+
 
   function handleChangeName(e){
     setName(e.target.value)
@@ -32,15 +50,14 @@ function App() {
 
  
 
-
   return (
     <div className='container_app'>
     <div className='personal_info'>
     <Personal name={name} handleChangeName={handleChangeName} phone={phone} handleChangePhone={handleChangePhone} email={email} handleChangeEmail={handleChangeEmail}/>
-    <Education  titleOfStudy={titleOfStudy} handleChangeTitleOfStudy={handleChangeTitleOfStudy} />
+    <Education   addEducation={addEducation} />
     <Experience />
     </div>
-    <Container name={name} phone={phone} email={email} titleOfStudy={titleOfStudy} />
+    <Container education={education} name={name} phone={phone} email={email}  />
     </div>
   )
 }
